@@ -1,4 +1,5 @@
 // Start of requirement declarations //
+var babel = require('gulp-babel');
 var browserSync = require('browser-sync').create();
 var cache = require('gulp-cache');
 var cssnano = require('gulp-cssnano');
@@ -56,6 +57,9 @@ gulp.task('sass', () => {
 gulp.task('useref', () => {
     return gulp.src('src/*.html')
         .pipe(useref())
+        .pipe(gulpIf('*.js', babel({
+            presets: ['es2015']
+        })))
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', cssnano()))
         .pipe(gulp.dest('dist'));
