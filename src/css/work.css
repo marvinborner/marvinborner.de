@@ -1,0 +1,11 @@
+.myWorkWrapper {
+  display: none;
+  height: 100%;
+  width: 100%; }
+
+.closeWorkBtn {
+  float: right;
+  margin: 10px; }
+
+.closeWorkBtn:hover {
+  animation: fa-spin 2s infinite linear; }

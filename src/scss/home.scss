@@ -1,0 +1,62 @@
+@import "variables";
+
+// Home styling
+html,
+body {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: $textColor;
+  background-color: $darkColor;
+  font-family: Comfortaa;
+}
+
+.avatar {
+  position: absolute;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  animation: avatarAnimation $avatarAnimationDuration ease-out 0s 1 normal forwards;
+}
+
+.introduction {
+  opacity: 0;
+  animation: introductionAnimation $introductionAnimationDuration ease-in $avatarAnimationDuration 1 normal forwards;
+}
+
+.showWorkBtn {
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  background-color: $avatarBackground;
+  color: $textColor;
+  text-align: center;
+}
+
+// Keyframes
+@keyframes avatarAnimation {
+  from {
+    width: $avatarSize;
+    height: $avatarSize;
+    opacity: 0;
+    margin-top: -$avatarSize / 2;
+    margin-left: -$avatarSize / 2;
+  }
+  to {
+    width: $avatarSize / $avatarSizeReduction;
+    height: $avatarSize / $avatarSizeReduction;
+    opacity: 1;
+    margin-top: -$avatarSize;
+    margin-left: -$avatarSize / 2 / $avatarSizeReduction;
+  }
+}
+
+@keyframes introductionAnimation {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1;
+  }
+}

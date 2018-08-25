@@ -1,0 +1,48 @@
+html,
+body {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #282828;
+  font-family: Comfortaa; }
+
+.avatar {
+  position: absolute;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  animation: avatarAnimation 1.5s ease-out 0s 1 normal forwards; }
+
+.introduction {
+  opacity: 0;
+  animation: introductionAnimation 2s ease-in 1.5s 1 normal forwards; }
+
+.showWorkBtn {
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  background-color: #EE534F;
+  color: white;
+  text-align: center; }
+
+@keyframes avatarAnimation {
+  from {
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+    margin-top: -125px;
+    margin-left: -125px; }
+  to {
+    width: 156.25px;
+    height: 156.25px;
+    opacity: 1;
+    margin-top: -250px;
+    margin-left: -78.125px; } }
+
+@keyframes introductionAnimation {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
