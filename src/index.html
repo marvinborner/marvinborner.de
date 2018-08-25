@@ -11,25 +11,29 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/work.css">
+    <link rel="stylesheet" href="css/actionOverlay.css">
+    <link rel="stylesheet" href="css/projects.css">
     <!--endbuild-->
+    <link rel="shortcut icon" type="image/x-icon" href="https://avatars3.githubusercontent.com/u/32108934">
 </head>
 
 <body>
     <div class="homeContent">
         <img class="avatar" src="https://avatars3.githubusercontent.com/u/32108934" />
         <div class="introduction">
-            <h1>Hi, I'm Marvin</h1>
+            <h1>Hi, I'm Marvin,</h1>
             <h2>developer, designer and photographer.</h2>
-            <button class="showWorkBtn" id="showWorkBtn">My Work</button>
+            <button class="redButton" data-action="project">Projects</button>
+            <button class="redButton" data-action="about">About</button>
+            <button class="redButton" data-action="statistics">Statistics</button>
         </div>
     </div>
 
-    <div class="myWorkWrapper">
-        <i class="closeWorkBtn fas fa-times fa-2x" id="closeWorkBtn"></i>
-        <div class="myWorkContent">
-            <h1>My Work</h1>
-            <div class="workGrid">
+    <div class="overlayWrapper projectOverlay">
+        <i class="closeBtn fas fa-times fa-2x" data-action="project"></i>
+        <div class="overlayContent">
+            <h1>Projects</h1>
+            <div class="projectGrid">
                 <div class="gridBox">
                     <a href="https://github.com/BEAM-Messenger" target="_blank">BEAM-Messenger</a>
                 </div>
@@ -46,11 +50,34 @@
         </div>
     </div>
 
+    <div class="overlayWrapper aboutOverlay">
+        <i class="closeBtn fas fa-times fa-2x" data-action="about"></i>
+        <div class="overlayContent">
+            <h1>About Me</h1>
+            <p>
+                Hi, I'm Marvin. <br />
+                I love programming, designing and photography. <br /><br />
+                <b>Name:</b> Marvin Borner <br />
+                <b>Location:</b> Germany <br />
+                <b>Age:</b> <span id="age"></span> <br />
+                <b>Languages:</b> German, English, Kotlin, JS, SQL, PHP, [Web languages] <br />
+                <b>Email:</b> <a href="mailto:marvin@borners.de">marvin@borners.de</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="overlayWrapper statisticsOverlay">
+        <i class="closeBtn fas fa-times fa-2x" data-action="statistics"></i>
+        <div class="overlayContent">
+
+        </div>
+    </div>
+
     <!--build:js js/main.min.js-->
     <script src="js/jquery.js"></script>
     <script src="js/fontawesome.js"></script>
     <script src="js/home.js"></script>
-    <script src="js/work.js"></script>
+    <script src="js/actionOverlay.js"></script>
     <!-- endbuild -->
 </body>
 

@@ -25,13 +25,19 @@ body {
   animation: introductionAnimation $introductionAnimationDuration ease-in $avatarAnimationDuration 1 normal forwards;
 }
 
-.showWorkBtn {
+.redButton {
+  margin-bottom: 5px;
   padding: 10px;
   border: none;
   border-radius: 50px;
   background-color: $avatarBackground;
   color: $textColor;
+  transition: all 1.5s;
   text-align: center;
+}
+
+.redButton:hover {
+  box-shadow: 0px 0px 15px -1px $avatarBackgroundDarker;
 }
 
 // Keyframes
