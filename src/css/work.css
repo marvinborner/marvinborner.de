@@ -4,8 +4,35 @@
   width: 100%; }
 
 .closeWorkBtn {
-  float: right;
-  margin: 10px; }
+  position: absolute;
+  margin: 5vh;
+  top: 0;
+  right: 0; }
 
 .closeWorkBtn:hover {
   animation: fa-spin 2s infinite linear; }
+
+.myWorkContent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; }
+
+.workGrid {
+  display: grid;
+  margin: 10px;
+  height: 30%;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px; }
+
+.gridBox {
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #444;
+  color: #fff; }

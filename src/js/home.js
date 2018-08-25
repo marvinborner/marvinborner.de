@@ -1,0 +1,1 @@
+$(".avatar").on("click", () => window.open('https://github.com/marvinborner', '_blank'));

@@ -1,3 +1,5 @@
+@import "variables";
+
 // Font
 @font-face {
     font-family: 'Comfortaa';
@@ -8,12 +10,18 @@
 }
 
 * {
-    overflow: none;
+    overflow: hidden;
 }
 
 html, body {
     height: 100%;
     width: 100%;
+}
+
+a, a:visited, a:hover {
+    color: $linkColor;
+    font-weight: 600; 
+    text-decoration: none;
 }
 
 :focus {
