@@ -1,0 +1,14 @@
+.projectGrid {
+  display: grid;
+  margin: 10px;
+  height: 30%;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px; }
+
+.gridBox {
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #444;
+  color: #fff; }

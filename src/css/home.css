@@ -19,13 +19,18 @@ body {
   opacity: 0;
   animation: introductionAnimation 2s ease-in 1.5s 1 normal forwards; }
 
-.showWorkBtn {
+.redButton {
+  margin-bottom: 5px;
   padding: 10px;
   border: none;
   border-radius: 50px;
   background-color: #EE534F;
   color: white;
+  transition: all 1.5s;
   text-align: center; }
+
+.redButton:hover {
+  box-shadow: 0px 0px 15px -1px #c54844; }
 
 @keyframes avatarAnimation {
   from {
