@@ -32,19 +32,38 @@ body {
 .redButton:hover {
   box-shadow: 0px 0px 15px -1px #c54844; }
 
+.supportBtn {
+  transition: all 1s; }
+  .supportBtn.fa-bitcoin {
+    color: #eff153; }
+  .supportBtn.fa-paypal {
+    color: #2d5cdd; }
+  .supportBtn.fa-github {
+    color: #767676; }
+
+svg.fa-instagram * {
+  transition: all 1s;
+  fill: url(#igGradient); }
+
+svg.fa-instagram *:hover {
+  fill: #EE534F; }
+
+.supportBtn:hover {
+  color: #EE534F; }
+
 @keyframes avatarAnimation {
   from {
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     opacity: 0;
-    margin-top: -125px;
-    margin-left: -125px; }
+    margin-top: -130px;
+    margin-left: -130px; }
   to {
-    width: 156.25px;
-    height: 156.25px;
+    width: 156.62651px;
+    height: 156.62651px;
     opacity: 1;
-    margin-top: -250px;
-    margin-left: -78.125px; } }
+    margin-top: -260px;
+    margin-left: -78.31325px; } }
 
 @keyframes introductionAnimation {
   from {
