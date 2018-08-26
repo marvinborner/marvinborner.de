@@ -82,7 +82,7 @@ gulp.task('default', (callback) => {
 
 gulp.task('watch', ['browserSync', 'sass'], () => {
     gulp.watch('src/scss/**/*.scss', ['sass']);
-    gulp.watch('src/*.html', browserSync.reload);
+    //gulp.watch('src/*.html', browserSync.reload);
     //gulp.watch('src/js/**/*.js', browserSync.reload);
 });
 // End of grouped tasks //
