@@ -41,6 +41,14 @@ body {
   .supportBtn.fa-github {
     color: #767676; }
 
+.supportBtn.fa-telegram {
+    color: #0074af;
+}
+
+.supportBtn.fa-whatsapp {
+    color: #347649;
+}
+
 svg.fa-instagram * {
   transition: all 1s;
   fill: url(#igGradient); }
