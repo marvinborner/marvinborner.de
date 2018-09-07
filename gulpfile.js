@@ -69,6 +69,7 @@ gulp.task('useref', () => {
 
 // Start of grouped tasks //
 gulp.task('build', (callback) => {
+    // git subtree push --prefix dist origin gh-pages // to sync
     runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts'],
         callback
     );

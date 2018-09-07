@@ -31,7 +31,7 @@ $.post({
 });
 
 function renderStats() {
-    dynamicStats.html("Last used programmed language: " + requestResult.data.profile.recent_langs[0].name + "<br><br>");
+    dynamicStats.html("Last used programming language: " + requestResult.data.profile.recent_langs[0].name + "<br><br>");
     dynamicStats.append("Programming languages used today: <br>" + getTodaysLangs());
 }
 
