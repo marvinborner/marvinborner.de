@@ -31,8 +31,17 @@ $.post({
 });
 
 function renderStats() {
-    dynamicStats.html("Last used programming language: " + requestResult.data.profile.recent_langs[0].name + "<br><br>");
-    dynamicStats.append("Programming languages used today: <br>" + getTodaysLangs());
+    dynamicStats.html("Last used programming language: <b>" + getLastUsedLang() + "</b><br><br>");
+    dynamicStats.append("Most used programming language overall: <b>" + getMostUsedLang() + "<br><br>");
+    dynamicStats.append("Programming languages used today: <br><b>" + getTodaysLangs() + "<b>");
+}
+
+function getLastUsedLang() {
+    return requestResult.data.profile.recent_langs.slice(-1)[0].name
+}
+
+function getMostUsedLang() {
+    return requestResult.data.profile.total_langs.reduce((prev, current) => (prev.y > current.y) ? prev : current).name
 }
 
 function getTodaysLangs() {
