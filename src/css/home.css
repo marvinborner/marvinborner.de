@@ -6,18 +6,21 @@ body {
   align-items: center;
   color: white;
   background-color: #282828;
-  font-family: Comfortaa; }
+    font-family: "Google Sans";
+}
 
 .avatar {
   position: absolute;
   border-radius: 100%;
   top: 50%;
   left: 50%;
-  animation: avatarAnimation 1.5s ease-out 0s 1 normal forwards; }
+    animation: avatarAnimation 1.2s ease-out 0s 1 normal forwards;
+}
 
 .introduction {
   opacity: 0;
-  animation: introductionAnimation 2s ease-in 1.5s 1 normal forwards; }
+    animation: introductionAnimation 1.5s ease-in 1.2s 1 normal forwards;
+}
 
 .redButton {
   margin-bottom: 5px;
