@@ -62,6 +62,15 @@ svg.fa-instagram *:hover {
 .supportBtn:hover {
   color: #EE534F; }
 
+.footer {
+    position: absolute;
+    width: 100vw;
+    margin-bottom: 10px;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+}
+
 @keyframes avatarAnimation {
   from {
     width: 260px;

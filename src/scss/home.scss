@@ -73,6 +73,15 @@ svg.fa-instagram *:hover {
   color: $avatarBackground;
 }
 
+.footer {
+  position: absolute;
+  width: 100vw;
+  margin-bottom: 10px;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+}
+
 // Keyframes
 @keyframes avatarAnimation {
   from {
