@@ -31,22 +31,18 @@ $.post({
 });
 
 function renderStats() {
-    dynamicStats.html("Last used programming language: <b>" + getLastUsedLang() + "</b><br><br>");
+    dynamicStats.html("Last used programming language: <b>" + getTodaysLangs().slice(-1)[0] + "</b><br><br>");
     dynamicStats.append("Most used programming language overall: <b>" + getMostUsedLang() + "<br><br>");
-    dynamicStats.append("Programming languages used today: <br><b>" + getTodaysLangs() + "<b>");
-}
-
-function getLastUsedLang() {
-    return requestResult.data.profile.recent_langs.slice(-1)[0].name
+    dynamicStats.append("Programming languages used today: <br><b>" + getTodaysLangs().join("<br>") + "<b>");
 }
 
 function getMostUsedLang() {
-    return requestResult.data.profile.total_langs.reduce((prev, current) => (prev.y > current.y) ? prev : current).name
+    return requestResult.data.profile.total_langs.reduce((prev, current) => (prev.xp > current.xp) ? prev : current).name
 }
 
 function getTodaysLangs() {
     const objects = requestResult.data.profile.day_language_xps.filter(obj => {
         return obj.date === new Date().toISOString().slice(0, 10);
     });
-    return objects.map(value => value.language).join("<br>")
+    return objects.map(value => value.language)
 }
