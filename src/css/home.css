@@ -6,21 +6,18 @@ body {
   align-items: center;
   color: white;
   background-color: #282828;
-    font-family: "Google Sans";
-}
+  font-family: "Google Sans"; }
 
 .avatar {
   position: absolute;
   border-radius: 100%;
   top: 50%;
   left: 50%;
-    animation: avatarAnimation 1.2s ease-out 0s 1 normal forwards;
-}
+  animation: avatarAnimation 1.2s ease-out 0s 1 normal forwards; }
 
 .introduction {
   opacity: 0;
-    animation: introductionAnimation 1.5s ease-in 1.2s 1 normal forwards;
-}
+  animation: introductionAnimation 1.5s ease-in 1.2s 1 normal forwards; }
 
 .redButton {
   margin-bottom: 5px;
@@ -43,14 +40,10 @@ body {
     color: #2d5cdd; }
   .supportBtn.fa-github {
     color: #767676; }
-
-.supportBtn.fa-telegram {
-    color: #0074af;
-}
-
-.supportBtn.fa-whatsapp {
-    color: #347649;
-}
+  .supportBtn.fa-telegram {
+    color: #0074af; }
+  .supportBtn.fa-whatsapp {
+    color: #347649; }
 
 svg.fa-instagram * {
   transition: all 1s;
@@ -63,13 +56,12 @@ svg.fa-instagram *:hover {
   color: #EE534F; }
 
 .footer {
-    position: absolute;
-    width: 100vw;
-    margin-bottom: 10px;
-    text-align: center;
-    left: 0;
-    bottom: 0;
-}
+  position: absolute;
+  width: 100vw;
+  margin-bottom: 10px;
+  text-align: center;
+  left: 0;
+  bottom: 0; }
 
 @keyframes avatarAnimation {
   from {
