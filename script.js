@@ -165,6 +165,9 @@ function seedRandomColor(rounds, a) {
 }
 
 Chart.defaults.global.animation.onProgress = event => {
-    if (document.getElementById("information").style.opacity !== "1")
+    if (document.getElementById("information").style.opacity !== "1") {
         document.getElementById("information").style.opacity = (event.currentStep / event.numSteps).toString();
+        for (const heading of document.getElementsByClassName("heading"))
+            heading.style.opacity = (event.currentStep / event.numSteps).toString();
+    }
 };
