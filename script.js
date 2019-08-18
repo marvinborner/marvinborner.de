@@ -5,6 +5,7 @@ request.onreadystatechange = () => {
         obj = JSON.parse(request.responseText);
         renderWeekChart();
         renderLangChart();
+        renderTodayChart();
     }
 };
 request.open("GET", "https://codestats.net/api/users/marvinborner", true);
@@ -37,15 +38,35 @@ function renderWeekChart() {
         options: {
             scales: {
                 yAxes: [{
+                    gridLines: {
+                        color: "#343434",
+                    },
                     ticks: {
+                        fontColor: "#808080",
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        color: "#343434",
+                    },
+                    ticks: {
+                        fontColor: "#808080",
                         beginAtZero: true
                     }
                 }]
             },
-            responsive: false,
+            responsive: true,
             maintainAspectRatio: false,
+            labels: {
+                fontColor: "#fff"
+            },
             legend: {
                 display: false
+            },
+            gridLines: {
+                color: "#fff",
+                lineWidth: 0.5
             }
         }
     });
@@ -59,7 +80,7 @@ function renderLangChart() {
         .forEach(key => {
             if (obj.languages[key]["xps"] > 100) {
                 languages.push(key);
-                languagesXP.push(obj.languages[key]["xps"])
+                languagesXP.push(obj.languages[key]["xps"] + obj.languages[key]["new_xps"])
             }
         });
 
@@ -75,8 +96,49 @@ function renderLangChart() {
             }]
         },
         options: {
-            responsive: false,
+            animation: {
+                animateScale: true
+            },
+            responsive: true,
             maintainAspectRatio: false,
+            aspectRatio: 1,
+            legend: {
+                display: false
+            }
+        }
+    })
+}
+
+function renderTodayChart() {
+    const languages = [];
+    const languagesXP = [];
+    Object.keys(obj.languages)
+        .sort((a, b) => obj.languages[b]["new_xps"] - obj.languages[a]["new_xps"])
+        .forEach(key => {
+            if (obj.languages[key]["new_xps"] > 0) {
+                languages.push(key);
+                languagesXP.push(obj.languages[key]["new_xps"])
+            }
+        });
+
+    const ctx = document.getElementById("codingLanguagesToday").getContext("2d");
+    new Chart(ctx, {
+        type: "pie",
+        data: {
+            labels: languages,
+            datasets: [{
+                data: languagesXP,
+                backgroundColor: seedRandomColor(Object.keys(languages).length, 0.5),
+                borderColor: seedRandomColor(Object.keys(languages).length, 0.8),
+            }]
+        },
+        options: {
+            animation: {
+                animateScale: true
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            aspectRatio: 1,
             legend: {
                 display: false
             }
