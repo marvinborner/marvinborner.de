@@ -1,4 +1,2 @@
-# marvinborner.me
+# marvinborner.de
 Just my personal website.
-
-You can build the files using `gulp build`

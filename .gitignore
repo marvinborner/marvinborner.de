@@ -1,1 +1,8 @@
-node_modules
+.idea/
+linuxdash/
+nextcloud/
+stats/
+php/
+rss/
+
+perm.sh
