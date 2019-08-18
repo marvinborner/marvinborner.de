@@ -42,7 +42,7 @@ function renderWeekChart() {
                         color: "#343434",
                     },
                     ticks: {
-                        fontColor: "#808080",
+                        fontColor: "#8b8b8b",
                         beginAtZero: true
                     }
                 }],
@@ -51,7 +51,7 @@ function renderWeekChart() {
                         color: "#343434",
                     },
                     ticks: {
-                        fontColor: "#808080",
+                        fontColor: "#8b8b8b",
                         beginAtZero: true
                     }
                 }]
@@ -101,7 +101,6 @@ function renderLangChart() {
             },
             responsive: true,
             maintainAspectRatio: false,
-            aspectRatio: 1,
             legend: {
                 display: false
             }
@@ -138,7 +137,6 @@ function renderTodayChart() {
             },
             responsive: true,
             maintainAspectRatio: false,
-            aspectRatio: 1,
             legend: {
                 display: false
             }
@@ -165,3 +163,8 @@ function seedRandomColor(rounds, a) {
 
     return arr
 }
+
+Chart.defaults.global.animation.onProgress = event => {
+    if (document.getElementById("information").style.opacity !== "1")
+        document.getElementById("information").style.opacity = (event.currentStep / event.numSteps).toString();
+};

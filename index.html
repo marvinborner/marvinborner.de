@@ -10,11 +10,37 @@
 <body>
 
 <div class="grid">
-    <div class="first">
+    <div class="topLeft">
+        <span class="heading">Ever</span>
+        <canvas height="400" id="codingLanguages" width="400"></canvas>
+    </div>
+    <div class="topCenter" id="information">
+        <h1>Hello!</h1>
+        <p>This site show some of my personal coding stats<br>- Have fun!</p>
+        <a href="https://github.com/marvinborner" target="_blank">GH</a>
+        &middot;
+        <a href="https://stackoverflow.com/users/story/9783773" target="_blank">SO</a>
+        &middot;
+        <a href="https://www.reddit.com/user/marvinborner/" target="_blank">RE</a>
+    </div>
+    <div class="topRight">
+        <span class="heading">Today</span>
+        <canvas height="400" id="codingLanguagesToday" width="400"></canvas>
+    </div>
+    <div class="bottom">
+        <span class="heading">Last 10 days</span>
         <canvas height="400" id="codingWeek" width="1000"></canvas>
     </div>
-    <canvas class="second" id="codingLanguages"></canvas>
-    <canvas class="third" id="codingLanguagesToday"></canvas>
+</div>
+
+<div class="mobile">
+    <h1>Hello!</h1>
+    <p>This site normally shows cool statistics but your screen is too small!<br>Here some links though:</p>
+    <a href="https://github.com/marvinborner" target="_blank">GH</a>
+    &middot;
+    <a href="https://stackoverflow.com/users/story/9783773" target="_blank">SO</a>
+    &middot;
+    <a href="https://www.reddit.com/user/marvinborner/" target="_blank">RE</a>
 </div>
 
 <script src="chart.js"></script>

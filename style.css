@@ -1,4 +1,7 @@
 html, body, .grid {
+    font-family: "monospace", "DejaVu Sans Mono", "Fira Code", "Inconsolata";
+    color: #dbdbdb;
+    text-align: center;
     background: #282828;
     margin: 0;
     padding: 0;
@@ -7,36 +10,68 @@ html, body, .grid {
     overflow: hidden;
 }
 
+a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: inherit;
+}
+
+.heading {
+    max-height: 22px !important;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 20% 40%;
     grid-template-rows: 50% 50%;
     justify-items: center;
     justify-content: center;
 }
 
-.first, .second, .third {
+.bottom, .topLeft, .topRight, .topCenter {
     padding: 10px;
+    max-width: calc(100% - 20px) !important;
+    max-height: calc(100% - 20px - 22px) !important;
 }
 
-.first {
-    max-width: calc(100% - 20px) !important;
-    max-height: calc(100% - 20px) !important;
-    grid-row: 1;
+.bottom {
+    grid-row: 2;
     grid-column-start: 1;
-    grid-column-end: span 2;
+    grid-column-end: span 3;
 }
 
-.second {
-    max-width: calc(100% - 20px) !important;
-    max-height: calc(100% - 20px) !important;
+.topLeft {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
 }
 
-.third {
-    max-width: calc(100% - 20px) !important;
-    max-height: calc(100% - 20px) !important;
+.topCenter {
+    opacity: 0;
+    transition: opacity .5s;
+    align-self: center;
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1;
+}
+
+.topRight {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.mobile {
+    display: none;
+    position: relative;
+    padding: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 550px) {
+    .mobile {
+        display: block;
+    }
+
+    .grid {
+        display: none;
+    }
 }
