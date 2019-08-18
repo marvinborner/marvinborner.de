@@ -17,6 +17,7 @@ a {
 }
 
 .heading {
+    opacity: 0;
     max-height: 22px !important;
 }
 
