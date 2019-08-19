@@ -120,6 +120,11 @@ function renderTodayChart() {
             }
         });
 
+    if (languages.length === 0) {
+        languages.push("NO DATA AVAILABLE");
+        languagesXP.push(1)
+    }
+
     const ctx = document.getElementById("codingLanguagesToday").getContext("2d");
     new Chart(ctx, {
         type: "pie",
