@@ -1,78 +1,56 @@
-html, body, .grid {
-    font-family: "monospace", "DejaVu Sans Mono", "Fira Code", "Inconsolata";
-    color: #dbdbdb;
-    text-align: center;
-    background: #282828;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+html {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+body {
+	height: 100vh;
+	color: rgba(255,255,255,.75);
+	font-family: 'Anonymous Pro', monospace;  
+	background-color: rgb(25,25,25);  
 }
 
 a {
-    text-decoration: none;
-    font-weight: bolder;
-    color: inherit;
+	text-decoration: none;
+	font-weight: bolder;
+	color: inherit;
 }
 
-.heading {
-    opacity: 0;
-    max-height: 22px !important;
+.urls {
+	opacity: 0;
+	animation: fadein 2s 7s ease-in forwards;
+	position: relative;
+	top: 45%;  
+	margin: 0 auto;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);    
+}
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+.typewriter {
+	position: relative;
+	top: 45%;  
+	margin: 0 auto;
+	border-right: 2px solid transparent;
+	font-size: 6vw;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);    
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 40% 20% 40%;
-    grid-template-rows: 50% 50%;
-    justify-items: center;
-    justify-content: center;
-}
+/* Pure awesomeness */
+.animation1 { animation: typewriter1 2s steps(22) 1s 1 normal both, blinkTextCursor 1s steps(22) 4 normal; }
+@keyframes typewriter1 { from { width: 0; } to { width: 12em; } }
 
-.bottom, .topLeft, .topRight, .topCenter {
-    padding: 10px;
-    max-width: calc(100% - 20px) !important;
-    max-height: calc(100% - 20px - 22px) !important;
-}
+.animation2 { animation: typewriter2 1.45s steps(16) 4s 1 normal both, blinkTextCursor 1s steps(16) 4s 4 normal; }
+@keyframes typewriter2 { from { width: 0; } to { width: 9.3em; } }
 
-.bottom {
-    grid-row: 2;
-    grid-column-start: 1;
-    grid-column-end: span 3;
-}
-
-.topLeft {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.topCenter {
-    opacity: 0;
-    transition: opacity .5s;
-    align-self: center;
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.topRight {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.mobile {
-    display: none;
-    position: relative;
-    padding: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-@media (max-width: 550px) {
-    .mobile {
-        display: block;
-    }
-
-    .grid {
-        display: none;
-    }
+@keyframes blinkTextCursor {
+	from { border-right-color: rgba(255, 255, 255, .75); }
+	to { border-right-color: transparent; }
 }
