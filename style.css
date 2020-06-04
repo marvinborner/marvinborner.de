@@ -1,55 +1,116 @@
-@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+:root {
+    --bg: #282c34;
+    --fg: #abb2bf;
+}
 
+html,
 body {
-	height: 100vh;
-	color: rgba(255,255,255,.75);
-	font-family: 'Anonymous Pro', monospace;  
-	background-color: rgb(25,25,25);  
-	overflow: hidden;
-	user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: monospace;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
-a {
-	text-decoration: none;
-	font-weight: bolder;
-	color: inherit;
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: var(--fg);
+    text-decoration: none;
+    opacity: 0;
+    animation: fade 1s 1.5s ease-in forwards;
 }
 
-.urls {
-	opacity: 0;
-	animation: fadein 2s 7s ease-in forwards;
-	position: relative;
-	top: 45%;  
-	margin: 0 auto;
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	transform: translateY(-50%);    
-}
-@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-
-.typewriter {
-	position: relative;
-	top: 45%;  
-	margin: 0 auto;
-	border-right: 2px solid transparent;
-	font-size: 6vw;
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	transform: translateY(-50%);    
+.main {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
-/* Pure awesomeness */
-.animation1 { animation: typewriter1 2s steps(22) 1s 1 normal both, blinkTextCursor 1s steps(22) 4 normal; }
-@keyframes typewriter1 { from { width: 0; } to { width: 12em; } }
+.name {
+    white-space: nowrap;
+    font-size: 5vw;
+}
 
-.animation2 { animation: typewriter2 1.45s steps(16) 4s 1 normal both, blinkTextCursor 1s steps(16) 4s 4 normal; }
-@keyframes typewriter2 { from { width: 0; } to { width: 9.3em; } }
+.text_animation {
+    animation: animation 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
 
-@keyframes blinkTextCursor {
-	from { border-right-color: rgba(255, 255, 255, .75); }
-	to { border-right-color: transparent; }
+/* Dumb browser fixes */
+:focus {
+    outline: none;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
+
+/* Not again. */
+.falling {
+    position: absolute;
+    opacity: 0;
+    bottom: 200vh;
+    max-width: 60vw;
+    height: auto;
+}
+
+.petunia {
+    margin-left: 12vw;
+    animation: drop 7s 3s ease-in forwards infinite;
+}
+
+.whale {
+    margin-left: 42vw;
+    animation: drop 5s 15s ease-in forwards infinite;
+}
+
+/* Keyframes */
+@keyframes animation {
+    0% {
+        letter-spacing: 1em;
+        -webkit-transform: translateZ(400px);
+        transform: translateZ(400px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes drop {
+    from {
+        opacity: 1;
+        transform: translate(0, -100vh) rotate(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 400vh) rotate(360deg);
+    }
 }
