@@ -1,6 +1,5 @@
 :root {
-    --bg: #282c34;
-    --fg: #abb2bf;
+    --fg: #1c1c1c;
 }
 
 html,
@@ -9,7 +8,25 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: var(--bg);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(
+        124deg,
+        #ff2400,
+        #e81d1d,
+        #e8b71d,
+        #e3e81d,
+        #1de840,
+        #1ddde8,
+        #2b1de8,
+        #dd00f3,
+        #dd00f3
+    );
+    background-size: 1800% 1800%;
+    animation: rainbow 18s ease infinite;
     color: var(--fg);
     font-family: monospace;
     overflow: hidden;
@@ -63,18 +80,18 @@ a:active {
     position: absolute;
     opacity: 0;
     bottom: 200vh;
-    max-width: 60vw;
+    max-width: 42vw;
     height: auto;
 }
 
 .petunia {
     margin-left: 12vw;
-    animation: drop 7s 3s ease-in forwards infinite;
+    animation: drop 7s 2s ease-in forwards infinite;
 }
 
 .whale {
     margin-left: 42vw;
-    animation: drop 5s 15s ease-in forwards infinite;
+    animation: drop 5s 8s ease-in forwards infinite;
 }
 
 /* Keyframes */
@@ -112,5 +129,17 @@ a:active {
     to {
         opacity: 1;
         transform: translate(0, 400vh) rotate(360deg);
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 82%;
+    }
+    50% {
+        background-position: 100% 19%;
+    }
+    100% {
+        background-position: 0% 82%;
     }
 }
