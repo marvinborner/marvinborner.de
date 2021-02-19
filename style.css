@@ -57,6 +57,15 @@ a:active {
     width: 100%;
 }
 
+.links {
+    display: flex;
+    justify-content: center;
+}
+
+.links a {
+    margin: auto 8px;
+}
+
 .name {
     white-space: nowrap;
     font-size: 5vw;
